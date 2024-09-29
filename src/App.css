@@ -45,3 +45,39 @@
 .start-btn:hover{
   background-color: rgb(0, 108, 203);
 }
+
+.question-container{
+  text-align: center;
+  p{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  :not(:last-child){
+    margin-bottom: 150px;
+  }
+}
+
+.btn-container{
+  width: 30%;
+  margin: 0 auto;
+  button{
+    background-color: white;
+    width: 80%;
+    height: 50px;
+    border: 2px solid rgb(187, 196, 255);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+  }
+  :first-child{
+    margin-bottom: 10px;
+  }
+}
+
+.btn-container button:hover{
+  background-color: rgb(187, 196, 255);
+}
+
+.selected{
+  background-color: rgb(187, 196, 255);
+}
