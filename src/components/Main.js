@@ -27,7 +27,7 @@ export default function Main(props) {
                 <img src={mbti} alt=""/>
                 <h2>{t('name')}</h2>
                 <p>{t('intro')}</p>
-                <button className="start-btn" onClick={handleNavigate}>{t('start')}</button>
+                <button className="blue-btn" onClick={handleNavigate}>{t('start')}</button>
             </div>
         </>
     )

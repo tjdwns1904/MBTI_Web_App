@@ -1,0 +1,16 @@
+export const ENFJ = require('./enfj.jpg');
+export const ENFP = require('./enfp.jpg');
+export const ENTJ = require('./entj.jpg');
+export const ENTP = require('./entp.jpg');
+export const ESFJ = require('./esfj.jpg');
+export const ESFP = require('./esfp.jpg');
+export const ESTJ = require('./estj.jpg');
+export const ESTP = require('./estp.jpg');
+export const INFJ = require('./infj.jpg');
+export const INFP = require('./infp.jpg');
+export const INTJ = require('./intj.jpg');
+export const INTP = require('./intp.jpg');
+export const ISFJ = require('./isfj.jpg');
+export const ISFP = require('./isfp.jpg');
+export const ISTJ = require('./istj.png');
+export const ISTP = require('./istp.jpg');
