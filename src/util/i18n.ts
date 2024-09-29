@@ -6,7 +6,7 @@ i18n.use(initReactI18next).init({
     resources: {
         ko: {
             translation: {
-                start: "검사 시작",
+                start: "검사 시작!",
                 name: "MBTI 테스트",
                 intro: "당신의 MBTI는 무엇인가요?\n간단한 테스트를 통해 알아보세요!",
                 q1: "당신은 파티에서",
@@ -239,7 +239,7 @@ i18n.use(initReactI18next).init({
         },
         vn: {
             translation: {
-                start: "Bắt đầu",
+                start: "Bắt đầu!",
                 name: "Kiểm tra MBTI",
                 intro: "MBTI của bạn là gì?\nHãy làm một bài kiểm tra đơn giản để tìm hiểu!",
                 q1: "Trong bữa tiệc, bạn sẽ ",

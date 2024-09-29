@@ -19,8 +19,8 @@ export default function Main(props) {
             <div className="header-container">
                 <span>MBTI</span>
                 <div>
-                    <img src={ko} alt="ko" id="ko" className="lan-btn" onClick={(e) => handleClick(e)} />
-                    <img src={vn} alt="vn" id="vn" className="lan-btn" onClick={(e) => handleClick(e)} />
+                    <img src={ko} alt="ko" id="ko" title="Korean" className="lan-btn" onClick={(e) => handleClick(e)} />
+                    <img src={vn} alt="vn" id="vn" title="Vietnamese" className="lan-btn" onClick={(e) => handleClick(e)} />
                 </div>
             </div>
             <div className="body-container">
