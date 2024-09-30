@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import Results from "./Results";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Questions(props) {
     const { t } = props;
@@ -136,7 +138,7 @@ export default function Questions(props) {
             {showResult ?
                 <Results t={t} result={result.current} /> :
                 <div className="question-container">
-                    <p>{idx + 1}/70</p>
+                    <p><span><FontAwesomeIcon icon={faChevronLeft}/></span> <strong>{idx + 1} / 70</strong> <span><FontAwesomeIcon icon={faChevronRight}/></span></p>
                     <h2>{t(questions[idx].q)}</h2>
                     <div className="btn-container">
                         <button id={questions[idx].A} onClick={(e) => {
