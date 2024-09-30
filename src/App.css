@@ -96,7 +96,7 @@ a {
 }
 
 .selected {
-  background-color: rgb(187, 196, 255);
+  background-color: rgb(187, 196, 255) !important;
 }
 
 .result-container {
