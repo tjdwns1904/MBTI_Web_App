@@ -1,31 +1,18 @@
 import React from "react";
-import vn from "../assets/vietnam.svg";
-import ko from "../assets/korea.svg";
 import mbti from "../assets/mbti.jpg";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 export default function Main(props) {
     const { t, setLan } = props;
     const navigate = useNavigate();
-    const handleClick = (e) => {
-        const { id } = e.target;
-        setLan(id);
-    }
     const handleNavigate = () => {
         navigate("/test");
     }
     return (
         <>
-            <div className="header-container">
-                <span onClick={() => {
-                    navigate("/");
-                }}>MBTI</span>
-                <div>
-                    <img src={ko} alt="ko" id="ko" title="Korean" className="lan-btn" onClick={(e) => handleClick(e)} />
-                    <img src={vn} alt="vn" id="vn" title="Vietnamese" className="lan-btn" onClick={(e) => handleClick(e)} />
-                </div>
-            </div>
+            <Header setLan={setLan}/>
             <div className="body-container">
                 <img src={mbti} alt=""/>
                 <h2>{t('name')}</h2>

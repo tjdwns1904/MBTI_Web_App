@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { ENFJ, ENFP, ENTJ, ENTP, ESFJ, ESFP, ESTJ, ESTP, INFJ, INFP, INTJ, INTP, ISFJ, ISTJ, ISTP, ISFP } from '../assets/index';
-import vn from "../assets/vietnam.svg";
-import ko from "../assets/korea.svg";
-import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Header from "./Header";
 
 export default function Types(props) {
     const { t, setLan } = props;
     const [idx, setIdx] = useState(0);
-    const navigate = useNavigate();
     const types = [
         { name: "ENFP", imgUrl: ENFP },
         { name: "ENFJ", imgUrl: ENFJ },
@@ -29,12 +26,8 @@ export default function Types(props) {
         { name: "ISFP", imgUrl: ISFP }
     ];
 
-    const handleClick = (e) => {
-        const { id } = e.target;
-        setLan(id);
-    }
     const handleDecrease = () => {
-        if(idx == 0)setIdx(types.length - 1);
+        if(idx === 0)setIdx(types.length - 1);
         else setIdx(idx - 1);
     }
     const handleIncrease = () => {
@@ -42,15 +35,7 @@ export default function Types(props) {
     }
     return (
         <>
-            <div className="header-container">
-                <span onClick={() => {
-                    navigate("/");
-                }}>MBTI</span>
-                <div>
-                    <img src={ko} alt="ko" id="ko" title="Korean" className="lan-btn" onClick={(e) => handleClick(e)} />
-                    <img src={vn} alt="vn" id="vn" title="Vietnamese" className="lan-btn" onClick={(e) => handleClick(e)} />
-                </div>
-            </div>
+            <Header setLan={setLan}/>
             <div className="type-container">
                 <p>
                     <span onClick={handleDecrease}><FontAwesomeIcon icon={faChevronLeft} /></span> <strong>{idx + 1} / 16</strong> <span onClick={handleIncrease}><FontAwesomeIcon icon={faChevronRight} /></span>
