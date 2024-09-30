@@ -236,7 +236,8 @@ i18n.use(initReactI18next).init({
                 infj: "예언자형. 사람과 관련된 뛰어난 통찰력을 가지고 있는 사람들.",
                 isfj: "임금 뒤편의 권력형. 성실하고 온화하며 협조를 잘하는 사람들.",
                 istj: "세상의 소금형. 한 번 시작한 일은 끝까지 해내는 사람들.",
-                toMenu: "다시 테스트하기"
+                toMenu: "다시 테스트하기",
+                warning: "모든 항목에 답하셔야 합니다."
             }
         },
         vn: {
@@ -471,7 +472,8 @@ i18n.use(initReactI18next).init({
                 infj: "Kiểu người ủng hộ. Những người có cái nhìn sâu sắc về con người.",
                 isfj: "Kiểu người bảo vệ, ",
                 istj: "Kiểu người trách nhiệm. Những người hoàn thành một cái gì đó họ bắt đầu.",
-                toMenu: "Kiểm tra lại"
+                toMenu: "Kiểm tra lại",
+                warning: "Bạn phải trả lời tất cả các mục."
             }
         }
     }
