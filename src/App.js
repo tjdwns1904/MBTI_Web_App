@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main t={t} setLan={handleLanChange} />} />
-        <Route path='/test' element={<Questions t={t} />} />
+        <Route path='/test' element={<Questions t={t} setLan={handleLanChange}/>} />
         <Route path='/types' element={<Types t={t} setLan={handleLanChange}/>} />
       </Routes>
     </BrowserRouter>
