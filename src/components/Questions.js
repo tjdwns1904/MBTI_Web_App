@@ -2,18 +2,12 @@ import React, { useRef, useState } from "react";
 import Results from "./Results";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Header from "./Header";
 
 export default function Questions(props) {
-    const { t } = props;
+    const { t, setLan } = props;
     const [idx, setIdx] = useState(0);
     const [showResult, setShowResult] = useState(false);
-    const [scores, setScores] = useState({
-        E: 0, I: 0,
-        S: 0, N: 0,
-        T: 0, F: 0,
-        J: 0, P: 0
-    });
-    const result = useRef("");
     const questions = [
         { q: 'q1', A: 'q1A', B: 'q1B' },
         { q: 'q2', A: 'q2A', B: 'q2B' },
@@ -86,71 +80,62 @@ export default function Questions(props) {
         { q: 'q69', A: 'q69A', B: 'q69B' },
         { q: 'q70', A: 'q70A', B: 'q70B' }
     ];
-    const scoring = {
-        'q1A': 'E', 'q1B': 'I', 'q2A': 'S', 'q2B': 'N', 'q3A': 'S', 'q3B': 'N', 'q4A': 'T', 'q4B': 'F', 'q5A': 'T', 'q5B': 'F', 'q6A': 'J', 'q6B': 'P', 'q7A': 'J', 'q7B': 'P',
-        'q8A': 'E', 'q8B': 'I', 'q9A': 'S', 'q9B': 'N', 'q10A': 'S', 'q10B': 'N', 'q11A': 'T', 'q11B': 'F', 'q12A': 'T', 'q12B': 'F', 'q13A': 'J', 'q13B': 'P', 'q14A': 'J', 'q14B': 'P',
-        'q15A': 'E', 'q15B': 'I', 'q16A': 'S', 'q16B': 'N', 'q17A': 'S', 'q17B': 'N', 'q18A': 'T', 'q18B': 'F', 'q19A': 'T', 'q19B': 'F', 'q20A': 'J', 'q20B': 'P', 'q21A': 'J', 'q21B': 'P',
-        'q22A': 'E', 'q22B': 'I', 'q23A': 'S', 'q23B': 'N', 'q24A': 'S', 'q24B': 'N', 'q25A': 'T', 'q25B': 'F', 'q26A': 'T', 'q26B': 'F', 'q27A': 'J', 'q27B': 'P', 'q28A': 'J', 'q28B': 'P',
-        'q29A': 'E', 'q29B': 'I', 'q30A': 'S', 'q30B': 'N', 'q31A': 'S', 'q31B': 'N', 'q32A': 'T', 'q32B': 'F', 'q33A': 'T', 'q33B': 'F', 'q34A': 'J', 'q34B': 'P', 'q35A': 'J', 'q35B': 'P',
-        'q36A': 'E', 'q36B': 'I', 'q37A': 'S', 'q37B': 'N', 'q38A': 'S', 'q38B': 'N', 'q39A': 'T', 'q39B': 'F', 'q40A': 'T', 'q40B': 'F', 'q41A': 'J', 'q41B': 'P', 'q42A': 'J', 'q42B': 'P',
-        'q43A': 'E', 'q43B': 'I', 'q44A': 'S', 'q44B': 'N', 'q45A': 'S', 'q45B': 'N', 'q46A': 'T', 'q46B': 'F', 'q47A': 'T', 'q47B': 'F', 'q48A': 'J', 'q48B': 'P', 'q49A': 'J', 'q49B': 'P',
-        'q50A': 'E', 'q50B': 'I', 'q51A': 'S', 'q51B': 'N', 'q52A': 'S', 'q52B': 'N', 'q53A': 'T', 'q53B': 'F', 'q54A': 'T', 'q54B': 'F', 'q55A': 'J', 'q55B': 'P', 'q56A': 'J', 'q56B': 'P',
-        'q57A': 'E', 'q57B': 'I', 'q58A': 'S', 'q58B': 'N', 'q59A': 'S', 'q59B': 'N', 'q60A': 'T', 'q60B': 'F', 'q61A': 'T', 'q61B': 'F', 'q62A': 'J', 'q62B': 'P', 'q63A': 'J', 'q63B': 'P',
-        'q64A': 'E', 'q64B': 'I', 'q65A': 'S', 'q65B': 'N', 'q66A': 'S', 'q66B': 'N', 'q67A': 'T', 'q67B': 'F', 'q68A': 'T', 'q68B': 'F', 'q69A': 'J', 'q69B': 'P', 'q70A': 'J', 'q70B': 'P',
-    }
+    const [answers, setAnswers] = useState({
+        1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null, 11: null, 12: null,
+        13: null, 14: null, 15: null, 16: null, 17: null, 18: null, 19: null, 20: null, 21: null, 22: null, 23: null, 24: null,
+        25: null, 26: null, 27: null, 28: null, 29: null, 30: null, 31: null, 32: null, 33: null, 34: null, 35: null, 36: null,
+        37: null, 38: null, 39: null, 40: null, 41: null, 42: null, 43: null, 44: null, 45: null, 46: null, 47: null, 48: null,
+        49: null, 50: null, 51: null, 52: null, 53: null, 54: null, 55: null, 56: null, 57: null, 58: null, 59: null, 60: null,
+        61: null, 62: null, 63: null, 64: null, 65: null, 66: null, 67: null, 68: null, 69: null, 70: null
+    });
+
     const handleClick = (e) => {
         const { id } = e.target;
+        setAnswers({ ...answers, [idx + 1]: id });
         if (idx + 1 < 70) {
             setIdx(idx + 1);
-            setScores({ ...scores, [scoring[id]]: scores[scoring[id]] + 1 });
         } else {
-            calculate();
-            setShowResult(true);
+            let isFilled = true;
+            for(let i = 1; i < 70; i++){
+                if(!answers[i]){
+                    isFilled = false;
+                    break;
+                }
+            }
+            if(isFilled)setShowResult(true);
+            else alert(t('warning'));
         }
     }
-    const calculate = () => {
-        if (result.current.length > 4) return;
-        if (scores.E <= scores.I) {
-            result.current += 'I';
-        } else {
-            result.current += 'E';
-        }
-        if (scores.S <= scores.N) {
-            result.current += 'N';
-        } else {
-            result.current += 'S';
-        }
-        if (scores.T <= scores.F) {
-            result.current += 'F';
-        } else {
-            result.current += 'T';
-        }
-        if (scores.J <= scores.P) {
-            result.current += 'P';
-        } else {
-            result.current += 'J';
-        }
 
-        console.log(result.current);
+    const handleDecrease = () => {
+        if (idx - 1 >= 0) setIdx(idx - 1);
+    }
+    const handleIncrease = () => {
+        if (idx + 1 < 70) setIdx(idx + 1);
     }
     return (
         <>
             {showResult ?
-                <Results t={t} result={result.current} /> :
-                <div className="question-container">
-                    <p><span><FontAwesomeIcon icon={faChevronLeft}/></span> <strong>{idx + 1} / 70</strong> <span><FontAwesomeIcon icon={faChevronRight}/></span></p>
-                    <h2>{t(questions[idx].q)}</h2>
-                    <div className="btn-container">
-                        <button id={questions[idx].A} onClick={(e) => {
-                            e.preventDefault();
-                            handleClick(e);
-                        }}>{t(questions[idx].A)}</button>
-                        <button id={questions[idx].B} onClick={(e) => {
-                            e.preventDefault();
-                            handleClick(e);
-                        }}>{t(questions[idx].B)}</button>
+                <Results t={t} answers={answers} /> :
+                <>
+                    <Header setLan={setLan}/>
+                    <div className="question-container">
+                        <p>
+                            <span onClick={handleDecrease}><FontAwesomeIcon icon={faChevronLeft} /></span> <strong>{idx + 1} / 70</strong> <span onClick={handleIncrease}><FontAwesomeIcon icon={faChevronRight} /></span>
+                        </p>
+                        <h2>{t(questions[idx].q)}</h2>
+                        <div className="btn-container">
+                            <button id={questions[idx].A} className={questions[idx].A === answers[idx + 1] ? "selected" : ""} onClick={(e) => {
+                                e.preventDefault();
+                                handleClick(e);
+                            }}>{t(questions[idx].A)}</button>
+                            <button id={questions[idx].B} className={questions[idx].B === answers[idx + 1] ? "selected" : ""} onClick={(e) => {
+                                e.preventDefault();
+                                handleClick(e);
+                            }}>{t(questions[idx].B)}</button>
+                        </div>
                     </div>
-                </div>
+                </>
             }
         </>
     )
