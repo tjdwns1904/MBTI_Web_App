@@ -1,6 +1,6 @@
 import React from "react";
-import vn from "../assets/vietnam.svg";
-import ko from "../assets/korea.svg";
+import vn from "../assets/images/vietnam.svg";
+import ko from "../assets/images/korea.svg";
 import { useNavigate } from "react-router";
 export default function Header(props) {
     const { setLan } = props;

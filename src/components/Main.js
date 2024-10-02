@@ -1,5 +1,5 @@
 import React from "react";
-import mbti from "../assets/mbti.jpg";
+import mbti from "../assets/images/mbti.jpg";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import Header from "./Header";

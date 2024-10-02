@@ -40,7 +40,7 @@ export default function Types(props) {
                 <p>
                     <span onClick={handleDecrease}><FontAwesomeIcon icon={faChevronLeft} /></span> <strong>{idx + 1} / 16</strong> <span onClick={handleIncrease}><FontAwesomeIcon icon={faChevronRight} /></span>
                 </p>
-                <img src={types[idx].imgUrl} />
+                <img src={types[idx].imgUrl} alt={types[idx].name}/>
                 <h2>{types[idx].name}</h2>
                 <p>{t(types[idx].name.toLowerCase())}</p>
             </div>
