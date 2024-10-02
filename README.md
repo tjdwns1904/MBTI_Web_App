@@ -27,13 +27,13 @@ MBTI 검사를 진행할 수 있는 웹사이트로 사용자는 테스트 진�
 1. 먼저 프로젝트를 클론합니다:
 
 ```bash
-git clone https://github.com/your-username/project-name.git
+git clone https://github.com/tjdwns1904/mbti-web-app.git
 ```
 
 2. 프로젝트 디렉토리로 이동합니다:
 
 ```bash
-cd project-name
+cd mbti-web-app
 ```
 
 3. 필요한 패키지를 설치합니다:
