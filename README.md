@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# MBTI WEB APPLICATION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MBTI 검사 웹사이트입니다.
 
-## Available Scripts
+## 목차
 
-In the project directory, you can run:
+1. [프로젝트 소개](#프로젝트-소개)
+2. [기술 스택](#기술-스택)
+3. [설치 방법](#설치-방법)
+4. [프로젝트 실행](#프로젝트-실행)
 
-### `npm start`
+## 프로젝트 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+MBTI 검사를 진행할 수 있는 웹사이트로 사용자는 테스트 진행 및 결과 확인을 할 수 있습니다.  
+또한, 다른 성격 유형들과 그 특징들을 살펴볼 수 있습니다.   
+베트남어와 한국어 지원으로 한국인과 베트남인 모두 사용 가능합니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 기술 스택
 
-### `npm test`
+- React
+- Node.js
+- NPM
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 설치 방법
 
-### `npm run build`
+1. 먼저 프로젝트를 클론합니다:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/your-username/project-name.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. 프로젝트 디렉토리로 이동합니다:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd project-name
+```
 
-### `npm run eject`
+3. 필요한 패키지를 설치합니다:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Yarn 사용 시:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+NPM 사용 시:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+## 프로젝트 실행
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+로컬 서버에서 프로젝트를 실행하려면 다음 명령어를 사용합니다:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Yarn 사용 시:
 
-### Code Splitting
+```bash
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+NPM 사용 시:
 
-### Analyzing the Bundle Size
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+실행 완료 후, 브라우저에서 http://localhost:3000 을 열어 애플리케이션을 확인할 수 있습니다.
